@@ -1,6 +1,6 @@
 {
-  "name": "denim-visualization",
-  "version": "1.0.0",
+  "name": "denim-visualizing",
+  "version": "2.0.0",
   "description": "This application enables to visualize a microservices architecture from a data perspective.",
   "main": "index.js",
   "scripts": {
@@ -13,14 +13,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.unamur.be/denim/visualization"
+    "url": "https://gitlab.unamur.be/denim/visualizing"
   },
   "keywords": [
     "microservice",
-    "visualization",
+    "visualizing",
     "data"
   ],
   "author": "Maxime ANDRÉ",
+  "contributors": [
+    "Maxime DE RYCKE"
+  ],
   "license": "ISC",
   "dependencies": {
     "@eslint/js": "^9.23.0",

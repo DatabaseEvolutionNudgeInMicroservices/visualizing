@@ -13,7 +13,8 @@ const port = 3000
 app.use(cors())
 
 // Application settings: body-parser
-app.use(bodyParser.json({ limit: '50mb' }))
+app.use(bodyParser.json({ limit: '500mb' }))
+//app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 // Application settings: swagger-ui-express

@@ -9,7 +9,7 @@ const ALL_FILTER = (x) => {
   return x
 }
 
-const NO_ANY_FILTER = (codeFragment) => {
+const NO_ANY_FILE_FILTER = (codeFragment) => {
   // Excluding the javascript-any-any-file code fragments.
   return !(
     codeFragment instanceof CodeFragment &&
@@ -17,10 +17,12 @@ const NO_ANY_FILTER = (codeFragment) => {
   )
 }
 
-const NO_ANY_NO_SCORE_UNDER_2_FILTER = (codeFragment) => {
-  // Excluding the javascript-any-any-file code fragments and the ones with a score lower than or equal to 2.
+const NO_ANY_FILE_AND_NO_SCORE_UNDER_2_FILTER = (codeFragment) => {
+  // Excluding the javascript-any-any-file code fragments, the ones different from javascript-any-any, and the ones with a score lower than or equal to 2.
   return !(
-    (codeFragment instanceof CodeFragment && Number.parseInt(codeFragment.getScore()) <= 2) ||
+    (codeFragment instanceof CodeFragment &&
+      codeFragment.getTechnology().getId() !== 'javascript-any-any-any' &&
+      Number.parseInt(codeFragment.getScore()) <= 2) ||
     (codeFragment instanceof CodeFragment &&
       codeFragment.getTechnology().getId() === 'javascript-any-any-file')
   )
@@ -47,8 +49,8 @@ const DEFAULT_OPACITY_CODE_FRAGMENT = '1'
 
 module.exports = {
   ALL_FILTER,
-  NO_ANY_FILTER,
-  NO_ANY_NO_SCORE_UNDER_2_FILTER,
+  NO_ANY_FILE_FILTER,
+  NO_ANY_FILE_AND_NO_SCORE_UNDER_2_FILTER,
   MARGIN,
   SIZE,
   DEFAULT_COLOR,

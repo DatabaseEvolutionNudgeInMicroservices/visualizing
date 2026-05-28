@@ -1,6 +1,7 @@
 // Error
 
 const BadFormat = require('../error/BadFormat.error.js')
+const { INPUT_INCORRECTLY_FORMATTED } = require('../error/Constant.error.js')
 
 /**
  * @overview This class represents a treemap, from the most atomic one to composed ones.
@@ -39,7 +40,7 @@ class Treemap {
     if (type !== null && type !== undefined && type.length > 0) {
       this.type = type
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -51,7 +52,7 @@ class Treemap {
     if (data !== null && data !== undefined) {
       this.data = data
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -68,7 +69,7 @@ class Treemap {
     ) {
       this.childrenNumber = childrenNumber
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -85,7 +86,7 @@ class Treemap {
     ) {
       this.descendantsNumber = descendantsNumber
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -97,7 +98,7 @@ class Treemap {
     if (width !== null && width !== undefined && Number.isFinite(width)) {
       this.width = width
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -109,7 +110,7 @@ class Treemap {
     if (height !== null && height !== undefined && Number.isFinite(height)) {
       this.height = height
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -121,7 +122,7 @@ class Treemap {
     if (x !== null && x !== undefined && x >= 0 && Number.isFinite(x)) {
       this.x = x
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -133,7 +134,7 @@ class Treemap {
     if (y !== null && y !== undefined && y >= 0 && Number.isFinite(y)) {
       this.y = y
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -145,7 +146,7 @@ class Treemap {
     if (children !== null && children !== undefined) {
       this.children = children
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -157,7 +158,7 @@ class Treemap {
     if (color !== null && color !== undefined && color.length > 0) {
       this.color = color
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -169,7 +170,7 @@ class Treemap {
     if (opacity !== null && opacity !== undefined && opacity.length > 0) {
       this.opacity = opacity
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -237,7 +238,7 @@ class Treemap {
         object.opacity
       )
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 

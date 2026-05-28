@@ -253,6 +253,502 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": ":3000 /frames TEMP",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"location\":\"https://www.github.com/user/project/blob/master/\",\"directories\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/\",\"directories\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/\",\"directories\":[],\"files\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L1C1L2C2\",\"technology\":{\"id\":\"javascript-api-express-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"'/user/:userId'\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"E1E2E3E4E5E6E7E8\",\"score\":\"8\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L3C3L4C4\",\"technology\":{\"id\":\"javascript-db-mongo-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"find\"},\"sample\":{\"content\":\"user {\\\"user_id\\\":userId}\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"M1M2M3M4M5M6\",\"score\":\"6\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L5C5L6C6\",\"technology\":{\"id\":\"javascript-db-redis-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"USER_ID:userId\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"R1R2R3R4R5R6\",\"score\":\"6\"}]}]}],\"files\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"}]}]}]},{\"location\":\"https://www.github.com/user/projectClone/blob/master/\",\"directories\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/\",\"directories\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/\",\"directories\":[],\"files\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L1C1L2C2\",\"technology\":{\"id\":\"javascript-api-express-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"'/user/:userId'\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"E1E2E3E4E5E6E7E8\",\"score\":\"8\"},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L3C3L4C4\",\"technology\":{\"id\":\"javascript-db-mongo-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"find\"},\"sample\":{\"content\":\"user {\\\"user_id\\\":userId}\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"M1M2M3M4M5M6\",\"score\":\"6\",\"calls\":[{\"timestamp\":1750336164614,\"argumentValues\":[\"\"]},{\"timestamp\":1750336164615,\"argumentValues\":[\"a\",\"b\"]}]},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L5C5L6C6\",\"technology\":{\"id\":\"javascript-db-redis-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"USER_ID:userId\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"R1R2R3R4R5R6\",\"score\":\"6\",\"calls\":[{\"timestamp\":1746933144652,\"argumentValues\":[\"x\",\"y\"]}]}]}]}],\"files\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"}]}]}]}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/frames",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"frames"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": ":3000 /frames 200 dynamic analysis report",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"location\":\"https://www.github.com/user/project/blob/master/\",\"directories\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/\",\"directories\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/\",\"directories\":[],\"files\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L1C1L2C2\",\"technology\":{\"id\":\"javascript-api-express-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"'/user/:userId'\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"E1E2E3E4E5E6E7E8\",\"score\":\"8\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L3C3L4C4\",\"technology\":{\"id\":\"javascript-db-mongo-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"find\"},\"sample\":{\"content\":\"user {\\\"user_id\\\":userId}\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"M1M2M3M4M5M6\",\"score\":\"6\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L5C5L6C6\",\"technology\":{\"id\":\"javascript-db-redis-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"USER_ID:userId\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"R1R2R3R4R5R6\",\"score\":\"6\"}]}]}],\"files\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"}]}]}]},{\"location\":\"https://www.github.com/user/projectClone/blob/master/\",\"directories\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/\",\"directories\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/\",\"directories\":[],\"files\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L1C1L2C2\",\"technology\":{\"id\":\"javascript-api-express-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"'/user/:userId'\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"E1E2E3E4E5E6E7E8\",\"score\":\"8\"},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L3C3L4C4\",\"technology\":{\"id\":\"javascript-db-mongo-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"find\"},\"sample\":{\"content\":\"user {\\\"user_id\\\":userId}\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"M1M2M3M4M5M6\",\"score\":\"6\",\"calls\":[{\"timestamp\":1750336164614,\"argumentValues\":[\"\"]},{\"timestamp\":1750336164615,\"argumentValues\":[\"a\",\"b\"]}]},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L5C5L6C6\",\"technology\":{\"id\":\"javascript-db-redis-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"USER_ID:userId\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"R1R2R3R4R5R6\",\"score\":\"6\",\"calls\":[{\"timestamp\":1746933144652,\"argumentValues\":[\"x\",\"y\"]}]}]}]}],\"files\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"}]}]}]}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/frames",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"frames"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": ":3000 /frames 406 static analysis report null or undefined",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/frames",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"frames"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": ":3000 /frames 406 static analysis report empty",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/frames",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"frames"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": ":8080 /frames TEMP",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"location\":\"https://www.github.com/user/project/blob/master/\",\"directories\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/\",\"directories\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/\",\"directories\":[],\"files\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L1C1L2C2\",\"technology\":{\"id\":\"javascript-api-express-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"'/user/:userId'\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"E1E2E3E4E5E6E7E8\",\"score\":\"8\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L3C3L4C4\",\"technology\":{\"id\":\"javascript-db-mongo-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"find\"},\"sample\":{\"content\":\"user {\\\"user_id\\\":userId}\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"M1M2M3M4M5M6\",\"score\":\"6\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L5C5L6C6\",\"technology\":{\"id\":\"javascript-db-redis-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"USER_ID:userId\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"R1R2R3R4R5R6\",\"score\":\"6\"}]}]}],\"files\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"}]}]}]},{\"location\":\"https://www.github.com/user/projectClone/blob/master/\",\"directories\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/\",\"directories\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/\",\"directories\":[],\"files\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L1C1L2C2\",\"technology\":{\"id\":\"javascript-api-express-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"'/user/:userId'\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"E1E2E3E4E5E6E7E8\",\"score\":\"8\"},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L3C3L4C4\",\"technology\":{\"id\":\"javascript-db-mongo-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"find\"},\"sample\":{\"content\":\"user {\\\"user_id\\\":userId}\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"M1M2M3M4M5M6\",\"score\":\"6\",\"calls\":[{\"timestamp\":1750336164614,\"argumentValues\":[\"\"]},{\"timestamp\":1750336164615,\"argumentValues\":[\"a\",\"b\"]}]},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L5C5L6C6\",\"technology\":{\"id\":\"javascript-db-redis-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"USER_ID:userId\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"R1R2R3R4R5R6\",\"score\":\"6\",\"calls\":[{\"timestamp\":1746933144652,\"argumentValues\":[\"x\",\"y\"]}]}]}]}],\"files\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"}]}]}]}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/frames",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"frames"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": ":8080 /frames 200 static analysis report",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"location\":\"https://www.github.com/user/project/blob/master/\",\"directories\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/\",\"directories\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/\",\"directories\":[],\"files\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L1C1L2C2\",\"technology\":{\"id\":\"javascript-api-express-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"'/user/:userId'\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"E1E2E3E4E5E6E7E8\",\"score\":\"8\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L3C3L4C4\",\"technology\":{\"id\":\"javascript-db-mongo-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"find\"},\"sample\":{\"content\":\"user {\\\"user_id\\\":userId}\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"M1M2M3M4M5M6\",\"score\":\"6\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L5C5L6C6\",\"technology\":{\"id\":\"javascript-db-redis-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"USER_ID:userId\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"R1R2R3R4R5R6\",\"score\":\"6\"}]}]}],\"files\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"}]}]}]},{\"location\":\"https://www.github.com/user/projectClone/blob/master/\",\"directories\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/\",\"directories\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/\",\"directories\":[],\"files\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L1C1L2C2\",\"technology\":{\"id\":\"javascript-api-express-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"'/user/:userId'\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"E1E2E3E4E5E6E7E8\",\"score\":\"8\"},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L3C3L4C4\",\"technology\":{\"id\":\"javascript-db-mongo-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"find\"},\"sample\":{\"content\":\"user {\\\"user_id\\\":userId}\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"M1M2M3M4M5M6\",\"score\":\"6\",\"calls\":[{\"timestamp\":1750336164614,\"argumentValues\":[\"\"]},{\"timestamp\":1750336164615,\"argumentValues\":[\"a\",\"b\"]}]},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L5C5L6C6\",\"technology\":{\"id\":\"javascript-db-redis-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"USER_ID:userId\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"R1R2R3R4R5R6\",\"score\":\"6\",\"calls\":[{\"timestamp\":1746933144652,\"argumentValues\":[\"x\",\"y\"]}]}]}]}],\"files\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"}]}]}]}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/frames",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"frames"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": ":8080 /frames 406 static analysis report null or undefined",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/frames",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"frames"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": ":8080 /frames 406 static analysis report empty",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/frames",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"frames"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": ":3000 /minmax TEMP",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"location\":\"https://www.github.com/user/project/blob/master/\",\"directories\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/\",\"directories\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/\",\"directories\":[],\"files\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L1C1L2C2\",\"technology\":{\"id\":\"javascript-api-express-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"'/user/:userId'\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"E1E2E3E4E5E6E7E8\",\"score\":\"8\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L3C3L4C4\",\"technology\":{\"id\":\"javascript-db-mongo-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"find\"},\"sample\":{\"content\":\"user {\\\"user_id\\\":userId}\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"M1M2M3M4M5M6\",\"score\":\"6\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L5C5L6C6\",\"technology\":{\"id\":\"javascript-db-redis-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"USER_ID:userId\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"R1R2R3R4R5R6\",\"score\":\"6\"}]}]}],\"files\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"}]}]}]},{\"location\":\"https://www.github.com/user/projectClone/blob/master/\",\"directories\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/\",\"directories\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/\",\"directories\":[],\"files\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L1C1L2C2\",\"technology\":{\"id\":\"javascript-api-express-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"'/user/:userId'\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"E1E2E3E4E5E6E7E8\",\"score\":\"8\"},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L3C3L4C4\",\"technology\":{\"id\":\"javascript-db-mongo-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"find\"},\"sample\":{\"content\":\"user {\\\"user_id\\\":userId}\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"M1M2M3M4M5M6\",\"score\":\"6\",\"calls\":[{\"timestamp\":1750336164614,\"argumentValues\":[\"\"]},{\"timestamp\":1750336164615,\"argumentValues\":[\"a\",\"b\"]}]},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L5C5L6C6\",\"technology\":{\"id\":\"javascript-db-redis-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"USER_ID:userId\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"R1R2R3R4R5R6\",\"score\":\"6\",\"calls\":[{\"timestamp\":1746933144652,\"argumentValues\":[\"x\",\"y\"]}]}]}]}],\"files\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"}]}]}]}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/minmax",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"minmax"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": ":3000 /minmax 200 dynamic analysis report",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"location\":\"https://www.github.com/user/project/blob/master/\",\"directories\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/\",\"directories\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/\",\"directories\":[],\"files\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L1C1L2C2\",\"technology\":{\"id\":\"javascript-api-express-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"'/user/:userId'\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"E1E2E3E4E5E6E7E8\",\"score\":\"8\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L3C3L4C4\",\"technology\":{\"id\":\"javascript-db-mongo-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"find\"},\"sample\":{\"content\":\"user {\\\"user_id\\\":userId}\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"M1M2M3M4M5M6\",\"score\":\"6\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L5C5L6C6\",\"technology\":{\"id\":\"javascript-db-redis-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"USER_ID:userId\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"R1R2R3R4R5R6\",\"score\":\"6\"}]}]}],\"files\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"}]}]}]},{\"location\":\"https://www.github.com/user/projectClone/blob/master/\",\"directories\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/\",\"directories\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/\",\"directories\":[],\"files\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L1C1L2C2\",\"technology\":{\"id\":\"javascript-api-express-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"'/user/:userId'\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"E1E2E3E4E5E6E7E8\",\"score\":\"8\"},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L3C3L4C4\",\"technology\":{\"id\":\"javascript-db-mongo-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"find\"},\"sample\":{\"content\":\"user {\\\"user_id\\\":userId}\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"M1M2M3M4M5M6\",\"score\":\"6\",\"calls\":[{\"timestamp\":1750336164614,\"argumentValues\":[\"\"]},{\"timestamp\":1750336164615,\"argumentValues\":[\"a\",\"b\"]}]},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L5C5L6C6\",\"technology\":{\"id\":\"javascript-db-redis-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"USER_ID:userId\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"R1R2R3R4R5R6\",\"score\":\"6\",\"calls\":[{\"timestamp\":1746933144652,\"argumentValues\":[\"x\",\"y\"]}]}]}]}],\"files\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"}]}]}]}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/minmax",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"minmax"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": ":3000 /minmax 406 static analysis report null or undefined",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/minmax",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"minmax"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": ":3000 /minmax 406 static analysis report empty",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/minmax",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"minmax"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": ":8080 /minmax TEMP",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"location\":\"https://www.github.com/user/project/blob/master/\",\"directories\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/\",\"directories\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/\",\"directories\":[],\"files\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L1C1L2C2\",\"technology\":{\"id\":\"javascript-api-express-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"'/user/:userId'\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"E1E2E3E4E5E6E7E8\",\"score\":\"8\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L3C3L4C4\",\"technology\":{\"id\":\"javascript-db-mongo-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"find\"},\"sample\":{\"content\":\"user {\\\"user_id\\\":userId}\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"M1M2M3M4M5M6\",\"score\":\"6\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L5C5L6C6\",\"technology\":{\"id\":\"javascript-db-redis-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"USER_ID:userId\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"R1R2R3R4R5R6\",\"score\":\"6\"}]}]}],\"files\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"}]}]}]},{\"location\":\"https://www.github.com/user/projectClone/blob/master/\",\"directories\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/\",\"directories\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/\",\"directories\":[],\"files\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L1C1L2C2\",\"technology\":{\"id\":\"javascript-api-express-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"'/user/:userId'\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"E1E2E3E4E5E6E7E8\",\"score\":\"8\"},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L3C3L4C4\",\"technology\":{\"id\":\"javascript-db-mongo-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"find\"},\"sample\":{\"content\":\"user {\\\"user_id\\\":userId}\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"M1M2M3M4M5M6\",\"score\":\"6\",\"calls\":[{\"timestamp\":1750336164614,\"argumentValues\":[\"\"]},{\"timestamp\":1750336164615,\"argumentValues\":[\"a\",\"b\"]}]},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L5C5L6C6\",\"technology\":{\"id\":\"javascript-db-redis-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"USER_ID:userId\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"R1R2R3R4R5R6\",\"score\":\"6\",\"calls\":[{\"timestamp\":1746933144652,\"argumentValues\":[\"x\",\"y\"]}]}]}]}],\"files\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"}]}]}]}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/minmax",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"minmax"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": ":8080 /minmax 200 static analysis report",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"location\":\"https://www.github.com/user/project/blob/master/\",\"directories\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/\",\"directories\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/\",\"directories\":[],\"files\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L1C1L2C2\",\"technology\":{\"id\":\"javascript-api-express-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"'/user/:userId'\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"E1E2E3E4E5E6E7E8\",\"score\":\"8\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L3C3L4C4\",\"technology\":{\"id\":\"javascript-db-mongo-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"find\"},\"sample\":{\"content\":\"user {\\\"user_id\\\":userId}\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"M1M2M3M4M5M6\",\"score\":\"6\"},{\"location\":\"https://www.github.com/user/project/blob/master/js/app/app.js#L5C5L6C6\",\"technology\":{\"id\":\"javascript-db-redis-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"USER_ID:userId\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"R1R2R3R4R5R6\",\"score\":\"6\"}]}]}],\"files\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/project/blob/master/js/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"}]}]}]},{\"location\":\"https://www.github.com/user/projectClone/blob/master/\",\"directories\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/\",\"directories\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/\",\"directories\":[],\"files\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L1C1L2C2\",\"technology\":{\"id\":\"javascript-api-express-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"'/user/:userId'\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"E1E2E3E4E5E6E7E8\",\"score\":\"8\"},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L3C3L4C4\",\"technology\":{\"id\":\"javascript-db-mongo-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"find\"},\"sample\":{\"content\":\"user {\\\"user_id\\\":userId}\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"M1M2M3M4M5M6\",\"score\":\"6\",\"calls\":[{\"timestamp\":1750336164614,\"argumentValues\":[\"\"]},{\"timestamp\":1750336164615,\"argumentValues\":[\"a\",\"b\"]}]},{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app/app.js#L5C5L6C6\",\"technology\":{\"id\":\"javascript-db-redis-call\"},\"operation\":{\"name\":\"READ\"},\"method\":{\"name\":\"get\"},\"sample\":{\"content\":\"USER_ID:userId\"},\"concepts\":[{\"name\":\"user\"}],\"heuristics\":\"R1R2R3R4R5R6\",\"score\":\"6\",\"calls\":[{\"timestamp\":1746933144652,\"argumentValues\":[\"x\",\"y\"]}]}]}]}],\"files\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app.js\",\"linesOfCode\":1,\"codeFragments\":[{\"location\":\"https://www.github.com/user/projectClone/blob/master/js/app.js#L0C0L0C0\",\"technology\":{\"id\":\"javascript-any-any-file\"},\"operation\":{\"name\":\"OTHER\"},\"method\":{\"name\":\" \"},\"sample\":{\"content\":\" \"},\"concepts\":[],\"heuristics\":\"A1\",\"score\":\"1\"}]}]}]}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/minmax",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"minmax"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": ":8080 /minmax 406 static analysis report null or undefined",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/minmax",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"minmax"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": ":8080 /minmax 406 static analysis report empty",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/minmax",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"minmax"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

@@ -1,14 +1,16 @@
 // Model
 
-const Concept = require('./Concept.model.js')
-const Sample = require('./Sample.model.js')
-const Method = require('./Method.model.js')
-const Operation = require('./Operation.model.js')
-const Technology = require('./Technology.model.js')
+const Concept = require('./Concept.model')
+const Sample = require('./Sample.model')
+const Method = require('./Method.model')
+const Operation = require('./Operation.model')
+const Technology = require('./Technology.model')
+const Call = require('./Call.model')
 
 // Error
 
 const BadFormat = require('../error/BadFormat.error.js')
+const { INPUT_INCORRECTLY_FORMATTED } = require('../error/Constant.error.js')
 
 /**
  * @overview This class represents a code fragment.
@@ -17,7 +19,7 @@ class CodeFragment {
   /**
    * Instantiates a code fragment.
    */
-  constructor(location, technology, operation, method, sample, concepts, heuristics, score) {
+  constructor(location, technology, operation, method, sample, concepts, heuristics, score, calls) {
     this.setLocation(location)
     this.setTechnology(technology)
     this.setOperation(operation)
@@ -26,13 +28,14 @@ class CodeFragment {
     this.setConcepts(concepts)
     this.setHeuristics(heuristics)
     this.setScore(score)
+    this.setCalls(calls)
   }
 
   setLocation(location) {
     if (location !== null && location !== undefined && location.length > 0) {
       this.location = location
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -44,7 +47,7 @@ class CodeFragment {
     if (technology !== null && technology !== undefined && technology instanceof Technology) {
       this.technology = technology
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -56,7 +59,7 @@ class CodeFragment {
     if (operation !== null && operation !== undefined && operation instanceof Operation) {
       this.operation = operation
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -68,7 +71,7 @@ class CodeFragment {
     if (method !== null && method !== undefined && method instanceof Method) {
       this.method = method
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -80,7 +83,7 @@ class CodeFragment {
     if (sample !== null && sample !== undefined && sample instanceof Sample) {
       this.sample = sample
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -89,10 +92,15 @@ class CodeFragment {
   }
 
   setConcepts(concepts) {
-    if (concepts !== null && concepts !== undefined) {
+    if (
+      concepts !== null &&
+      concepts !== undefined &&
+      Array.isArray(concepts) &&
+      (concepts.length > 0 ? concepts.every((c) => c instanceof Concept) : true)
+    ) {
       this.concepts = concepts
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -104,7 +112,7 @@ class CodeFragment {
     if (heuristics !== null && heuristics !== undefined) {
       this.heuristics = heuristics
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -116,12 +124,20 @@ class CodeFragment {
     if (score !== null && score !== undefined) {
       this.score = score
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
   getScore() {
     return this.score
+  }
+
+  setCalls(calls) {
+    this.calls = calls
+  }
+
+  getCalls() {
+    return this.calls
   }
 
   /**
@@ -169,6 +185,7 @@ class CodeFragment {
         object.concepts.forEach((concept) => concepts.push(Concept.revive(concept)))
         let heuristics = object.heuristics
         let score = object.score
+        const calls = object.calls ? object.calls.map((call) => Call.revive(call)) : undefined
         return new CodeFragment(
           location,
           technology,
@@ -177,10 +194,11 @@ class CodeFragment {
           sample,
           concepts,
           heuristics,
-          score
+          score,
+          calls
         )
       } else {
-        throw new BadFormat()
+        throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
       }
     } catch (error) {
       throw error

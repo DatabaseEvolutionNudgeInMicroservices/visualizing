@@ -1,4 +1,4 @@
-# DENIM Visualization
+# DENIM Visualizing
 
 ## Installation
 
@@ -21,8 +21,8 @@ You have the tree following options.
 
 #### Launching from Docker Hub (preferred)
 
-- [Docker Hub repository](https://hub.docker.com/r/maxiandr/denim-visualization)
- 
+- [Docker Hub repository](https://hub.docker.com/r/denimraindrop/denim-visualization)
+
 #### Launching from source code
 
 - Open the project in an IDE and install the dependencies.
@@ -67,5 +67,4 @@ A `docker-compose.yml` file also exists at the root in order to launch easily a 
   docker-compose up
   ```
 
-⚠️ This command must be executed at the location of the `docker-compose.yml` file and have to be run as with the
-right privileges (administrator).
+⚠️ This command must be executed at the location of the `docker-compose.yml` file and have to be run as with the right privileges (administrator).

@@ -1,7 +1,11 @@
 // Model
+
 const Treemap = require('../../model/Treemap.model.js')
+
 // Error
+
 const BadFormat = require('../../error/BadFormat.error.js')
+const { INPUT_INCORRECTLY_FORMATTED } = require('../../error/Constant.error.js')
 
 // Happy path test suite
 
@@ -1018,7 +1022,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsStringGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive an incomplete object', () => {
@@ -1030,7 +1034,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsStringGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive an undefined object', () => {
@@ -1042,7 +1046,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a null object', () => {
@@ -1054,7 +1058,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with null type', () => {
@@ -1068,7 +1072,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with empty type', () => {
@@ -1082,7 +1086,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with null data', () => {
@@ -1096,7 +1100,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with null children number', () => {
@@ -1110,7 +1114,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with negative children number', () => {
@@ -1124,7 +1128,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with incorrectly formatted children number', () => {
@@ -1138,7 +1142,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with a float children number', () => {
@@ -1152,7 +1156,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with null descendants number', () => {
@@ -1166,7 +1170,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with negative descendants number', () => {
@@ -1180,7 +1184,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with incorrectly formatted children number', () => {
@@ -1194,7 +1198,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with a float children number', () => {
@@ -1208,7 +1212,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with null width', () => {
@@ -1222,7 +1226,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with incorrectly formatted width', () => {
@@ -1236,7 +1240,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with null height', () => {
@@ -1250,7 +1254,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with incorrectly formatted height', () => {
@@ -1264,7 +1268,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with null X', () => {
@@ -1278,7 +1282,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with incorrectly formatted X', () => {
@@ -1292,7 +1296,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with null Y', () => {
@@ -1306,7 +1310,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with incorrectly formatted Y', () => {
@@ -1320,7 +1324,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with null children', () => {
@@ -1334,7 +1338,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with null color', () => {
@@ -1348,7 +1352,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with empty color', () => {
@@ -1362,7 +1366,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with null opacity', () => {
@@ -1376,7 +1380,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('revive a treemap with empty opacity', () => {
@@ -1390,7 +1394,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       Treemap.revive(treemapAsObjectGiven)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set null type', () => {
@@ -1401,7 +1405,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setType(null)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set undefined type', () => {
@@ -1412,7 +1416,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setType(undefined)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set empty type', () => {
@@ -1423,7 +1427,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setType('')
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set null data', () => {
@@ -1434,7 +1438,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setData(null)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set undefined data', () => {
@@ -1445,7 +1449,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setData(undefined)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set null children number', () => {
@@ -1456,7 +1460,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setChildrenNumber(null)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set undefined children number', () => {
@@ -1467,7 +1471,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setChildrenNumber(undefined)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set negative children number', () => {
@@ -1478,7 +1482,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setChildrenNumber(-1)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set incorrectly formatted children number', () => {
@@ -1489,7 +1493,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setChildrenNumber('1')
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set null descendants number', () => {
@@ -1500,7 +1504,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setDescendantsNumber(null)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set undefined descendants number', () => {
@@ -1511,7 +1515,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setDescendantsNumber(undefined)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set negative descendants number', () => {
@@ -1522,7 +1526,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setDescendantsNumber(-1)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set incorrectly formatted descendants number', () => {
@@ -1533,7 +1537,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setDescendantsNumber('1')
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set null width', () => {
@@ -1544,7 +1548,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setWidth(null)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set undefined width', () => {
@@ -1555,7 +1559,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setWidth(undefined)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set incorrectly formatted width', () => {
@@ -1566,7 +1570,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setWidth('1')
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set null height', () => {
@@ -1577,7 +1581,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setHeight(null)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set undefined height', () => {
@@ -1588,7 +1592,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setHeight(undefined)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set incorrectly formatted height', () => {
@@ -1599,7 +1603,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setHeight('1')
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set null X', () => {
@@ -1610,7 +1614,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setX(null)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set undefined X', () => {
@@ -1621,7 +1625,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setX(undefined)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set incorrectly formatted X', () => {
@@ -1632,7 +1636,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setX('1')
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set null Y', () => {
@@ -1643,7 +1647,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setY(null)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set undefined Y', () => {
@@ -1654,7 +1658,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setY(undefined)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set incorrectly formatted Y', () => {
@@ -1665,7 +1669,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setY('1')
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set null children', () => {
@@ -1676,7 +1680,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setChildren(null)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set undefined children', () => {
@@ -1687,7 +1691,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setChildren(undefined)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set null color', () => {
@@ -1698,7 +1702,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setColor(null)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set undefined color', () => {
@@ -1709,7 +1713,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setColor(undefined)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set empty color', () => {
@@ -1720,7 +1724,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setColor('')
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set null opacity', () => {
@@ -1731,7 +1735,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setOpacity(null)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set undefined opacity', () => {
@@ -1742,7 +1746,7 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setOpacity(undefined)
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 
   test('set empty opacity', () => {
@@ -1753,6 +1757,6 @@ describe('Treemap tries to', () => {
 
     expect(() => {
       treemapGiven.setOpacity('')
-    }).toThrow(new BadFormat())
+    }).toThrow(new BadFormat(INPUT_INCORRECTLY_FORMATTED))
   })
 })

@@ -1,10 +1,44 @@
-# DENIM Visualization
+# DENIM Visualizing
 
-[![pipeline status](https://gitlab.unamur.be/denim/visualization/badges/master/pipeline.svg)](https://gitlab.unamur.be/denim/visualization/-/commits/master)
+[![pipeline status](https://gitlab.unamur.be/denim/visualizing/badges/master/pipeline.svg)](https://gitlab.unamur.be/denim/visualizing/-/commits/master)
 
 ## 📣 Description
 
 This application enables to visualize a microservices architecture from a data perspective.
+
+## 📝 How to cite?
+
+```latex
+
+%%% Cite the papers
+
+@inproceedings{andre2025b,
+  title         = {Understanding Data Access in Microservices Applications Using Interactive Treemaps},
+  author        = {Andr{\'e}, Maxime and Raglianti, Marco and Cleve, Anthony and Lanza, Michele},
+  booktitle     = {Proceedings of the 33rd International Conference on Program Comprehension (ICPC 2025): ERA Track},
+  year          = {2025},
+  organization  = {IEEE Computer Society Press / ACM Press},
+  doi           = {https://doi.org/10.1109/icpc66645.2025.00030}
+}
+
+@inproceedings{andre2025d,
+  title         = {Visualizing and Exploring Data Access in Microservices Using Interactive Treemaps},
+  author        = {Andr{\'e}, Maxime and Raglianti, Marco and Cleve, Anthony and Lanza, Michele},
+  booktitle     = {Proceedings of the 13th Working Conference on Software Visualization (VISSOFT 2025): Research Track},
+  year          = {2025},
+  organization  = {IEEE Computer Society Press},
+  doi           = {https://doi.org/10.1109/vissoft67405.2025.00012}
+}
+
+@inproceedings{deRycke2025a,
+  title         = {Visualizing Data Access Traces in Microservices Using Animated Heat Treemaps},
+  author        = {De Rycke, Maxime and Andr{\'e}, Maxime and Raglianti, Marco and Cleve, Anthony and Lanza, Michele},
+  booktitle     = {Proceedings of the 13th Working Conference on Software Visualization (VISSOFT 2025): NIER Track},
+  year          = {2025},
+  organization  = {IEEE Computer Society Press},
+  doi           = {https://doi.org/10.1109/vissoft67405.2025.00017}
+}
+```
 
 ## ⭐ Features
 
@@ -112,6 +146,75 @@ Consult the response view object in JSON:
 }
 ```
 
+### Frames
+
+#### Description
+
+It transforms a dynamic analysis report logic object into a animated treemap frames view object.
+
+#### Implementation status
+
+| Transformation | Implementation status |
+| -------------- | --------------------- |
+| Frames         | 🌕                    |
+
+#### How to?
+
+**INPUT**
+
+Invoke the transformation by using the [POST /frames](http://localhost:3000/frames) route with a dynamic analysis report in JSON (obtained from [DENIM Reverse Engineering Dynamic Analysis](https://github.com/DatabaseEvolutionNudgeInMicroservices/reverse-engineering-dynamic-analysis)) inside the request.
+
+**OUTPUT**
+
+Consult the response view object in JSON:
+
+```json
+[
+  {
+    "location": "https://github.com/<user>/<repository>/.../<file path>.js#Ly1Cx1Ly2Cx2",
+    "timestamp": <timestamp>,
+    "technology": {
+      "id": "<technology>"
+    },
+    "operation": {
+      "name": "<operation>"
+    },
+    "argumentValues": ["<key>", "<value>"],
+    "heuristics": "<heuristics>"
+  },
+  // ...
+]
+```
+
+### Min Max
+
+#### Description
+
+It transforms a dynamic analysis report logic object into an object indicating the minimum and maximum number of calls across all code fragments.
+
+#### Implementation status
+
+| Transformation | Implementation status |
+| -------------- | --------------------- |
+| Min Max        | 🌕                    |
+
+#### How to?
+
+**INPUT**
+
+Invoke the transformation by using the [POST /minmax](http://localhost:3000/minmax) route with a dynamic analysis report in JSON (obtained from [DENIM Reverse Engineering Dynamic Analysis](https://github.com/DatabaseEvolutionNudgeInMicroservices/reverse-engineering-dynamic-analysis)) inside the request.
+
+**OUTPUT**
+
+Consult the response view object in JSON:
+
+```json
+{
+    "min": <min>,
+    "max": <max>
+}
+```
+
 ## 👩‍💻 Development details
 
 ### Setup
@@ -122,7 +225,7 @@ See [INSTALL file](INSTALL.md).
 
 Manual test suites are set up thanks through the [Postman](https://www.postman.com/) tool.
 
-The tests are specified in the `/test/manual` directory and are named following the `*.test.js` pattern.
+The tests are specified in the `/test/manual` directory.
 
 ### Test the app (unit testing)
 
@@ -244,12 +347,26 @@ This one is described in the `.gitlab-ci.yml`.
 
 The treemap follows that model:
 
-<img src="assets/model.png" alt="Model" width="150px"/>
+<img src="assets/img/model_treemap.png" alt="Model"/>
+
+### Animated Heat Treemap
+
+The animated heat treemap follows that model:
+
+<img src="assets/img/model_animated_heat_treemap.png" alt="Model"/>
+
+### Timeline
+
+The timeline follows that model:
+
+<img src="assets/img/model_timeline.png" alt="Model"/>
 
 ## 🤝 Contributing
 
 If you want to contribute to the project, please consider the following instructions:
 
+- Any helping method or class must be named clearly (no abbreviations), especially integrating the type of detection, technology, and type of code fragment.
+- More generally, any contribution must follow the conventions and keep the shape of previous contributions.
 - Any contribution must be tested (unit and integration tests).
 - All the tests and the CI/CD pipeline must pass before definitively integrating the contribution.
 - Any contribution must be documented, especially by updating the `README.md` and the `INSTALL.md` file.
@@ -258,4 +375,5 @@ If you want to contribute to the project, please consider the following instruct
 
 ## 📊 Evaluation
 
-The complete data of our evaluation is detailed in the [`/evaluation`](https://github.com/DatabaseEvolutionNudgeInMicroservices/visualization/tree/main/evaluation) folder. It contains static analysis JSON files used as input to our approach and treemap SVG files generated based on our approach. PDF file also puts into context the choice of the two versions of Overleaf targeted for the case study.
+The complete data of our evaluation is detailed in the [`/evaluation`](https://github.com/DatabaseEvolutionNudgeInMicroservices/visualization/tree/main/evaluation) folder. The subfolders `/treemap`, `/animated-heat-treemap`, and `/timeline` contains input and output files of our approach alongside additional files detailing the systems and the versions targeted.
+ 

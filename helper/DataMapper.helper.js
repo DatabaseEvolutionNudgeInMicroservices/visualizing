@@ -2,12 +2,12 @@
 
 const Repository = require('../model/Repository.model.js')
 const Treemap = require('../model/Treemap.model.js')
+const Frame = require('../model/Frame.model.js')
 
 // Helpers
 
 const {
   ALL_FILTER,
-  DEFAULT_COLOR,
   DEFAULT_COLOR_CODE_FRAGMENT,
   DEFAULT_COLOR_DIRECTORY,
   DEFAULT_COLOR_FILE,
@@ -25,13 +25,17 @@ const {
 // Error
 
 const BadFormat = require('../error/BadFormat.error.js')
-const BadFilter = require('../error/BadFormat.error.js')
+const BadFilter = require('../error/BadFilter.error.js')
+const { INPUT_INCORRECTLY_FORMATTED, FILTER_UNDEFINED } = require('../error/Constant.error.js')
 
 // Libraries
 
 //const potpack = require('@/lib/packer.growing.js') // A library for the packing algorithm.
 const binpack = require('bin-pack') // Another library for the packing algorithm.
 
+/**
+ * @overview This class represents the data mapper between a static analysis report and any request regarding visualization purposes.
+ */
 class DataMapper {
   // ------------------------------------------------------------------------
   //                            JSON -> Object
@@ -52,10 +56,10 @@ class DataMapper {
         })
         return repositories
       } else {
-        throw new BadFormat()
+        throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
       }
     } catch (e) {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -78,7 +82,7 @@ class DataMapper {
       })
       return resultRepositories
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -147,10 +151,10 @@ class DataMapper {
         })
         return resultRepositories
       } else {
-        throw new BadFilter()
+        throw new BadFilter(FILTER_UNDEFINED)
       }
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -240,10 +244,10 @@ class DataMapper {
         result = [...new Set(result)] // Delete duplicates.
         return result
       } else {
-        throw new BadFilter()
+        throw new BadFilter(FILTER_UNDEFINED)
       }
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -339,7 +343,7 @@ class DataMapper {
 
       return fileTreeMapObject
     } else {
-      throw new BadFormat()
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
     }
   }
 
@@ -520,6 +524,118 @@ class DataMapper {
       child.height = child.height - MARGIN
     })
     return { elements: elements, width: result.width, height: result.height }
+  }
+
+  // ------------------------------------------------------------------------
+  //            Object -> Timeline / Animated Heat Treemap
+  // ------------------------------------------------------------------------
+
+  /**
+   * Converts the given static analysis report to an array of frames.
+   * @param repositories {[Repository]} The given static analysis report.
+   * @returns {[Frame]} The array containing the frames.
+   */
+  toFrames(repositories) {
+    const frames = []
+    if (repositories) {
+      repositories.forEach((repository) => {
+        this.toFrameRepository(repository, frames)
+      })
+      // Sorts the frames (smallest timestamp first).
+      return frames.sort((a, b) => a.timestamp - b.timestamp)
+    } else {
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
+    }
+  }
+
+  toFrameRepository(repository, frames) {
+    repository.getDirectories().forEach((directory) => {
+      this.toFrameDirectory(directory, frames)
+    })
+  }
+
+  toFrameDirectory(directory, frames) {
+    directory.getFiles().forEach((file) => {
+      file.getCodeFragments().forEach((codeFragment) => {
+        frames.push(...this.toFrameCodeFragment(codeFragment))
+      })
+    })
+
+    const subDirectories = directory.getDirectories()
+
+    if (subDirectories) {
+      subDirectories.forEach((subDirectory) => {
+        this.toFrameDirectory(subDirectory, frames)
+      })
+    }
+  }
+
+  toFrameCodeFragment(codeFragment) {
+    const calls = codeFragment.getCalls()
+    return calls
+      ? calls.map((call) => {
+          return new Frame(
+            codeFragment.getLocation(),
+            call.getTimestamp(),
+            codeFragment.getTechnology(),
+            codeFragment.getOperation(),
+            call.getArgumentValues(),
+            codeFragment.heuristics
+          )
+        })
+      : []
+  }
+
+  /**
+   * Computes the minimum and maximum number of calls for all code fragments in the given static analysis report.
+   * This is used for the color scale of the animated heat treemap.
+   * @param repositories {[Repository]} The given static analysis report.
+   * @returns {{min: number, max: number}} An object containing the minimum and maximum number of calls.
+   */
+  toMinMaxCallsCount(repositories) {
+    if (!repositories) {
+      throw new BadFormat(INPUT_INCORRECTLY_FORMATTED)
+    }
+
+    if (!repositories.length) {
+      return { min: 0, max: 0 } // Returns 0 for both min and max as default values when none repository is found.
+    }
+
+    const minMaxCallsCount = { min: Number.MAX_SAFE_INTEGER, max: Number.MIN_SAFE_INTEGER }
+
+    repositories.forEach((repository) => {
+      this.toMinMaxCallsCountRepository(repository, minMaxCallsCount)
+    })
+
+    return minMaxCallsCount
+  }
+
+  toMinMaxCallsCountRepository(repository, minMaxCallsCount) {
+    repository.getDirectories().forEach((directory) => {
+      this.toMinMaxCallsCountDirectory(directory, minMaxCallsCount)
+    })
+  }
+
+  toMinMaxCallsCountDirectory(directory, minMaxCallsCount) {
+    directory.getFiles().forEach((file) => {
+      file.getCodeFragments().forEach((codeFragment) => {
+        this.toMinMaxCallsCountCodeFragment(codeFragment, minMaxCallsCount)
+      })
+    })
+
+    const subDirectories = directory.getDirectories()
+
+    if (subDirectories) {
+      subDirectories.forEach((subDirectory) => {
+        this.toMinMaxCallsCountDirectory(subDirectory, minMaxCallsCount)
+      })
+    }
+  }
+
+  toMinMaxCallsCountCodeFragment(codeFragment, minMaxCallsCount) {
+    const callsCount = codeFragment.getCalls() ? codeFragment.getCalls().length : 0
+    minMaxCallsCount.min = Math.min(minMaxCallsCount.min, callsCount)
+    minMaxCallsCount.max = Math.max(minMaxCallsCount.max, callsCount)
   }
 }
 
